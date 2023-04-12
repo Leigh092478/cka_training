@@ -1,21 +1,22 @@
 # Tmux commands:
-•	Create new session: tmux
-•	Create new vertical pane: ctrl + b %
-•	Create new horizontal pane: ctrl + b “
-•	Switch to pane on the right: ctrl + b right arrow key
-•	Switch to pane on the left: ctrl + b left arrow key
-•	See pane index number: ctrl + b q
-•	Switch to pane index #: ctrl + b q <Index Number>
-•	Enter edit mode: ctrl + b [
-•	Exit edit mode: q (while in edit mode)
-•	Detach from a pane: ctrl + d
+* Create new session: tmux
+* Create new vertical pane: ctrl + b %
+* Create new horizontal pane: ctrl + b “
+* Switch to pane on the right: ctrl + b right arrow key
+* Switch to pane on the left: ctrl + b left arrow key
+* See pane index number: ctrl + b q
+* Switch to pane index #: ctrl + b q <Index Number>
+* Enter edit mode: ctrl + b [
+* Exit edit mode: q (while in edit mode)
+* Detach from a pane: ctrl + d
 
 # Install Kubernetes:
-•	On master and worker node:
-o	sudo swap off -a (check with free command)
-o	Prepare pre-requisites:
-	Install a container run time: https://kubernetes.io/docs/setup/production-environment/container-runtimes/
-•	cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+### On master and worker node:
+    - sudo swap off -a (check with free command)
+    
+    Prepare pre-requisites:
+    	Install a container run time: https://kubernetes.io/docs/setup/production-environment/container-runtimes/
+    •	cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
 br_netfilter
 EOF
