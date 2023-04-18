@@ -25,7 +25,7 @@
 
 # Install Kubernetes:
 ### On master and worker node:
-- sudo swap off -a (check with free command)
+- sudo swapoff -a (check with free command)
     
 #### Prepare pre-requisites:
 - Install a container run time: https://kubernetes.io/docs/setup/production-environment/container-runtimes/
