@@ -61,3 +61,8 @@
 - sudo kubeadm init --apiserver-advertise-address 192.168.56.5 --pod-network-cidr 192.168.0.0/16 --upload-certs --control-plane-endpoint master.local --kubernetes-version 1.26.0
 
 
+## Disable the Swap
+- sudo vim /etc/fstab
+
+## Installing Calico
+- https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart
