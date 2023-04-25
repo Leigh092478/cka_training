@@ -58,7 +58,7 @@
 - sudo apt-mark hold kubelet kubeadm kubectl
 
 #### Initialize the cluster: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
-- sudo kubeadm init --apiserver-advertise-address 192.168.56.5 --pod-network-cidr 192.168.0.0/16 --upload-certs --control-plane-endpoint master.local --kubernetes-version 1.26.0
+- sudo kubeadm init --apiserver-advertise-address 192.168.56.5 --pod-network-cidr 192.168.0.0/16 --upload-certs --kubernetes-version 1.26.0
 
 
 ## Disable the Swap
