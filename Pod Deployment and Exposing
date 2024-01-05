@@ -1,0 +1,24 @@
+Note:
+you can set an alias for "kubectl" as:
+alias k=kubectl
+
+1. Deploy a pod call nginxpod with image nginx in controlplane, Make sure pod is not scheduled in worker node.
+	k run nginxpod --image=nginx --dry-run=client -o yaml > 1.yaml
+
+	edit 1.yaml
+	nodeName: master <- insert this under spec
+
+	k apply -f 1.yaml
+
+	check the Node column:
+	k get pod -o wide
+
+2. Expose a existing pod called nginxpod a as service, service name should be nginxsvc. Pod port=80
+	 k expose pod nginxpod --name=nginxsvc --port=80
+
+3. Expose a existing pod called nginxpod, service name as nginxnodeportsvc, service should acces through NodePort (NodePort=30200)
+
+
+### For Debugging
+1. kubernetes logs <NAME>
+2. k exec -it <POD_NAME> -- bin/bash     --> get inside the pod

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginxpod2-depl
+  name: nginxpod2-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxpod2-depl
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginxpod2-depl
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxpod2-service
+spec:
+  type: NodePort
+  selector:
+    app: nginxpod2-depl
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80 
+      nodePort: 30200
