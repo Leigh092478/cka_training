@@ -21,6 +21,10 @@ If you wish to pause the VM you can run:
 ```
 $ vagrant suspend
 ```
+If you wish to start the pevious session you can run:
+```
+$ vagrant resume
+```
 If you want to delete the VM you can run:
 ```
 $ vagrant destroy
