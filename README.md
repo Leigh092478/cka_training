@@ -1,7 +1,7 @@
 # cka-training
 My preparation for the Certified Kubernetes Training Administrator notes.  
 
-I will using this space to place in files and notes that I will be using to train for the Certified Kubernetes Administrator certificate. I am starting this on February 14, 2023 and am targeting on going for the exam by the 2nd quarter of this year.  
+I will be using this space to place in files and notes that I will use in my training for the Certified Kubernetes Administrator certificate. 
 
 # What am I using to learn?
 I am currently going through the [Container](https://learn.acloud.guru/learning-path/cloud-adjacent-containers) learning path on [aCloud.guru](https://acloud.guru). In particular I am tracing the lessons on the [Certified Kubernetes Administrator(CKA)](https://learn.acloud.guru/course/certified-kubernetes-administrator/overview) and [Kubernetes the hard way](https://learn.acloud.guru/course/8832e727-9101-4785-8ea6-e8057ad62f69/overview), both by [William Boyd](https://www.linkedin.com/in/wilb/).  
