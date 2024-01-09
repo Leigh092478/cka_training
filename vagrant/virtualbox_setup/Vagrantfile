@@ -21,7 +21,6 @@ Vagrant.configure("2") do |kube|
       masterconfig.cpus = 4
       masterconfig.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
-    kubemaster.vm.provision "shell", path: "./k8s_req.sh"
   end
 
   (1..NODE_COUNT).each do |count|
@@ -34,16 +33,11 @@ Vagrant.configure("2") do |kube|
         workerconfig.cpus = 2
         workerconfig.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
       end
-      kubeworker.vm.provision "shell", path: "./k8s_req.sh"
     end
   end
 
   kube.vm.provision "shell", inline: <<-SHELL
     sudo apt update
     sudo apt install -y avahi-daemon libnss-mdns apt-transport-https ca-certificates curl
-    sudo echo "192.168.56.4 jumpbox jumpbox" >> /etc/hosts
-    sudo echo "192.168.56.5 kmaster kmaster" >> /etc/hosts
-    sudo echo "192.168.56.11 kworker1 kworker1" >> /etc/hosts
-    sudo echo "192.168.56.12 kworker2 kworker2" >> /etc/hosts
   SHELL
 end
