@@ -1,5 +1,5 @@
 # Deployments
-Deployments allows you set declarative updates for Pods and ReplicaSets. This allows you make changes to your pods or replicasets to reduce disruption. Deployments allow to specifcy how to perform these updates, which by default is set to "RollingUpdate".  
+Deployments allows you to set declarative updates for Pods and ReplicaSets. This allows you make changes to your pods or replicasets to reduce disruption. Deployments allow to specifcy how to perform these updates, which by default is set to "RollingUpdate".  
 
 # Creating a Deployment
 We can easily create a deployment through the command "kubectl create deployment". Lets run through a basic setting.
@@ -18,7 +18,7 @@ NAME                          DESIRED   CURRENT   READY   AGE
 nginx-deployment-55888b446c   1         1         1       2m18s
 ```
 
-As can be seen, when creating a deployment and not setting any values for replicas will automatically set it to 1. There are are more options available to deployments, but before that, lets scale it up to 4 then perform an update.
+As we can see, when creating a deployment and not setting any values for replicas will automatically set it to 1. There are are more options available to deployments, but before that, lets scale it up to 4 then perform an update.
 ```
 # Scale up the deployment to 4.
 $ kubectl scale deployment nginx-deployment --replicas=4

@@ -1,3 +1,6 @@
 **/.vagrant
 vagrant/**/*.log
 home/**
+*.crt
+*csr
+*.key
