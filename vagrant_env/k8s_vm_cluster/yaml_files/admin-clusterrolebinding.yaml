@@ -2,12 +2,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   creationTimestamp: null
-  name: vagrant-admin-clusterrolebinding
+  name: admin-clusterrolebinding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: vagrant-admin-clusterrole
+  name: admin-clusterrole
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: vagrant_admin
+  name: vagrant-admin
