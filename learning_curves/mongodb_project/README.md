@@ -1,6 +1,6 @@
 # Web Application Setup using MongoDb
 
-## Phase 1
+## Phase 1 - Initial:
 
 The goal of this project is to apply what we learn about the K8s Components of;
 1. Deployment
@@ -9,7 +9,7 @@ The goal of this project is to apply what we learn about the K8s Components of;
 4. Secret
 5. Pods
 
-## Project overview:
+### Project overview:
 1. Deploy 2 application, MongoDb App (Back-end) & MongoDb Express(Front End).
 2. Only MongoDb-express can acces the MongoDb App(Internal Service) and no outside app can make a connection.
 3. Credentials (UserName & Password) should be kept and read using the K8s Secret.
@@ -17,7 +17,7 @@ The goal of this project is to apply what we learn about the K8s Components of;
 5. Mongo-express should be accesible outside the k8s Cluster.
 6. Use base64 to encrypt the credentials
 
-## Tasks:
+### Tasks:
 1. Create Deployment and Service for MongoDB App.
 2. Create Deployment and Service for Mongo Express which can be access be access outside the cluster.
 3. Create a Secret for both Mongodb and Mongo-Express.
@@ -26,6 +26,17 @@ The goal of this project is to apply what we learn about the K8s Components of;
 
 -> echo -n 'username' | base64
 -> echo -n 'password' | base64
+
+
+## Phase 2 - Scale up & Pod Scheduller:
+In this phase, the project is currently deployed in default namespace and only have 1 replica.
+
+### Task:
+1. create a namespace of 'training' and use it for this mongodb project.
+2. create 2 user;
+    - mongodb-user (view only the pods,logs and configmap)
+    - mongodb-admin (can add user, administer the project and namespace)
+3. 
 
 ## Issues encountered
 1. Using the latest mongodb version requires "MongoDB 5.0+ requires a CPU with AVX support". 

@@ -5,8 +5,9 @@ metadata:
   labels:
     app: nginxpod-depl
   name: nginxpod-depl
+  namespace: test
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginxpod-depl
@@ -30,6 +31,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginxpod-service
+  namespace: test
 spec:
   type: NodePort
   selector:
@@ -39,3 +41,17 @@ spec:
       port: 80
       targetPort: 80 
       nodePort: 30500
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  rules:
+  - host: myapp.com
+    http:
+      paths:
+      - backend:
+          serviceName: nginxpod-service
+          servicePort: 80
